@@ -52,6 +52,7 @@ RUN systemctl enable postgresql-9.5.service
 RUN yum -y install http://ftp.riken.jp/Linux/fedora/epel/epel-release-latest-7.noarch.rpm && yum clean all
 
 RUN yum -y install http://rpms.famillecollet.com/enterprise/remi-release-7.rpm && yum clean all
+RUN (yum -y install httpd || true) && yum clean all
 RUN yum -y install \
   php56-php \
   php56-php-pear \
