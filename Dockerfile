@@ -44,6 +44,8 @@ RUN sed -ri 's/^UsePrivilegeSeparation sandbox/UsePrivilegeSeparation no/' /etc/
 RUN sed -ri 's/^UsePAM yes/UsePAM no/' /etc/ssh/sshd_config
 RUN systemctl enable sshd.service
 
+RUN yum -y install git && yum clean all
+
 RUN yum -y install http://yum.postgresql.org/9.5/redhat/rhel-7-x86_64/pgdg-centos95-9.5-2.noarch.rpm && yum clean all
 RUN yum -y install postgresql95-server postgresql95-contrib
 RUN su postgres -c "/usr/pgsql-9.5/bin/initdb --no-locale --encoding=UTF8 -D /var/lib/pgsql/9.5/data"
