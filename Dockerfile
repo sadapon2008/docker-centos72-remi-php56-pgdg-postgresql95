@@ -1,4 +1,4 @@
-FROM centos:7.2.1511
+FROM centos:7
 MAINTAINER sadapon2008 <sadapon2008@gmail.com>
 ENV container docker
 
@@ -89,5 +89,5 @@ EXPOSE 22
 
 VOLUME ["/sys/fs/cgroup"]
 
-CMD ["/usr/lib/systemd/systemd"]
+CMD ["/usr/sbin/init"]
 
